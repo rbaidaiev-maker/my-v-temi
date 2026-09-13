@@ -1,0 +1,1275 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Я в STEMі — ми в темі · Домашнє опрацювання</title>
+<meta name="description" content="Домашня інтерактивна сторінка уроку 3, курс STEM 7 клас: анкетування, підрахунок, агрегація даних і побудова діаграми — самостійне опрацювання">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+<style>
+  :root{
+    --bg:#f6f7fc; --surface:#ffffff; --surface-2:#eef0fa; --surface-3:#e3e6f6; --border:#dde1f2;
+    --ink:#161b2e; --ink-dim:#565f82; --ink-faint:#8790b3;
+    --accent:#7c3aed; --accent-ink:#ffffff; --accent-soft:#efe8fe;
+    --s:#16a34a; --s-soft:#dcf7e3;
+    --t:#2563eb; --t-soft:#e3ecfd;
+    --e:#ca8a04; --e-soft:#faf0d1;
+    --m:#dc2626; --m-soft:#fbe1e1;
+    --good:#0d9488; --bad:#dc2626;
+    --shadow: 0 1px 2px rgba(20,24,50,.04), 0 10px 30px -12px rgba(20,24,50,.16);
+    --shadow-lg: 0 20px 60px -20px rgba(20,24,50,.35);
+    --font-display:'Unbounded','Segoe UI',system-ui,sans-serif;
+    --font-body:'IBM Plex Sans','Segoe UI',system-ui,sans-serif;
+    --font-mono:'IBM Plex Mono','SFMono-Regular',Consolas,monospace;
+    --radius-s:10px; --radius-m:16px; --radius-l:24px;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    html:not([data-theme="light"]):not([data-theme="dark"]){
+      --bg:#0a0e1c; --surface:#121729; --surface-2:#171d33; --surface-3:#1f2640; --border:#2a3153;
+      --ink:#eef0fb; --ink-dim:#a3aad0; --ink-faint:#6c7398;
+      --accent:#a78bfa; --accent-ink:#171227; --accent-soft:#241c40;
+      --s:#4ade80; --s-soft:#122a1c;
+      --t:#60a5fa; --t-soft:#182645;
+      --e:#facc15; --e-soft:#332b10;
+      --m:#f87171; --m-soft:#3a1616;
+      --good:#2dd4bf; --bad:#f87171;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -12px rgba(0,0,0,.5);
+      --shadow-lg: 0 20px 60px -20px rgba(0,0,0,.7);
+      color-scheme: dark;
+    }
+  }
+  html[data-theme="dark"]{
+    --bg:#0a0e1c; --surface:#121729; --surface-2:#171d33; --surface-3:#1f2640; --border:#2a3153;
+    --ink:#eef0fb; --ink-dim:#a3aad0; --ink-faint:#6c7398;
+    --accent:#a78bfa; --accent-ink:#171227; --accent-soft:#241c40;
+    --s:#4ade80; --s-soft:#122a1c;
+    --t:#60a5fa; --t-soft:#182645;
+    --e:#facc15; --e-soft:#332b10;
+    --m:#f87171; --m-soft:#3a1616;
+    --good:#2dd4bf; --bad:#f87171;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -12px rgba(0,0,0,.5);
+    --shadow-lg: 0 20px 60px -20px rgba(0,0,0,.7);
+    color-scheme: dark;
+  }
+  html[data-theme="light"]{
+    --bg:#f6f7fc; --surface:#ffffff; --surface-2:#eef0fa; --surface-3:#e3e6f6; --border:#dde1f2;
+    --ink:#161b2e; --ink-dim:#565f82; --ink-faint:#8790b3;
+    --accent:#7c3aed; --accent-ink:#ffffff; --accent-soft:#efe8fe;
+    --s:#16a34a; --s-soft:#dcf7e3;
+    --t:#2563eb; --t-soft:#e3ecfd;
+    --e:#ca8a04; --e-soft:#faf0d1;
+    --m:#dc2626; --m-soft:#fbe1e1;
+    --good:#0d9488; --bad:#dc2626;
+    color-scheme: light;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--font-body); -webkit-font-smoothing:antialiased; min-height:100vh;}
+  body::before{
+    content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.5;
+    background-image: radial-gradient(circle at 3px 3px, var(--border) 1px, transparent 1.6px);
+    background-size: 34px 34px;
+    -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 40%, transparent 85%);
+            mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 40%, transparent 85%);
+  }
+  h1,h2,h3,.display{font-family:var(--font-display); text-wrap:balance; letter-spacing:.005em;}
+  .mono{font-family:var(--font-mono);}
+  p{line-height:1.6;}
+  button{font-family:inherit;}
+  ::selection{background:var(--accent-soft); color:var(--ink);}
+
+  .page{position:relative; z-index:1; max-width:920px; margin:0 auto; padding:104px 20px 80px;}
+  @media (max-width:480px){ .page{padding:96px 14px 64px;} }
+
+  .topbar{
+    position:fixed; top:0; left:0; right:0; z-index:40; display:flex; align-items:center; gap:12px;
+    padding:12px clamp(14px,4vw,32px);
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .brand{display:flex; align-items:center; gap:9px; font-family:var(--font-display); font-weight:700; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-dim); flex:none;}
+  .brand .stem-mark{display:inline-flex; gap:2px;}
+  .brand .stem-mark b{font-weight:800; font-size:1rem;}
+  .brand .stem-mark b:nth-child(1){color:var(--s);} .brand .stem-mark b:nth-child(2){color:var(--t);}
+  .brand .stem-mark b:nth-child(3){color:var(--e);} .brand .stem-mark b:nth-child(4){color:var(--m);}
+  .brand-text{display:none;}
+  @media (min-width:560px){ .brand-text{display:inline;} }
+  .progress-track{flex:1; height:6px; border-radius:99px; background:var(--surface-3); overflow:hidden; box-shadow:inset 0 0 0 1px var(--border); min-width:40px;}
+  .progress-fill{height:100%; border-radius:99px; background:linear-gradient(90deg,var(--s),var(--t),var(--e),var(--m)); transition:width .4s cubic-bezier(.4,0,.2,1); width:0%;}
+  .progress-label{font-family:var(--font-mono); font-size:.72rem; color:var(--ink-faint); flex:none; min-width:40px; text-align:right;}
+  .icon-btn{display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:99px; background:var(--surface); border:1px solid var(--border); color:var(--ink); cursor:pointer; box-shadow:var(--shadow); transition:transform .15s, border-color .15s; flex:none;}
+  .icon-btn:hover{border-color:var(--accent); transform:translateY(-1px);}
+  .icon-btn:focus-visible, a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-visible, textarea:focus-visible{outline:2.5px solid var(--accent); outline-offset:2px;}
+
+  .toc-overlay{position:fixed; inset:0; z-index:60; display:none; background:color-mix(in srgb, var(--bg) 55%, transparent); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); align-items:flex-start; justify-content:center; padding:min(10vh,90px) 20px 20px;}
+  .toc-overlay.open{display:flex;}
+  .toc-card{width:min(560px,100%); max-height:78vh; overflow-y:auto; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); box-shadow:var(--shadow-lg); padding:22px;}
+  .toc-card h3{margin:0 0 4px; font-size:1.1rem;}
+  .toc-card .lede{margin-bottom:16px; font-size:.88rem;}
+  .toc-list{display:grid; gap:5px;}
+  .toc-item{display:flex; align-items:center; gap:12px; width:100%; text-align:left; padding:10px 11px; border-radius:var(--radius-s); border:1px solid transparent; background:transparent; cursor:pointer; color:var(--ink);}
+  .toc-item:hover{background:var(--surface-2); border-color:var(--border);}
+  .toc-item .num{font-family:var(--font-mono); font-size:.76rem; color:var(--ink-faint); width:22px; flex:none;}
+  .toc-item .ttl{font-weight:600; font-size:.9rem;}
+  .toc-item .chk{margin-left:auto; color:var(--good); flex:none; opacity:0;}
+  .toc-item.done .chk{opacity:1;}
+
+  .card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-m); box-shadow:var(--shadow); padding:20px;}
+  .grid{display:grid; gap:14px;}
+  .g2{grid-template-columns:1fr 1fr;} .g3{grid-template-columns:repeat(3,1fr);} .g4{grid-template-columns:repeat(4,1fr);}
+  .g2-lead{grid-template-columns:1.3fr 1fr;}
+  @media (max-width:760px){ .g2,.g3,.g4,.g2-lead{grid-template-columns:1fr;} }
+
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:99px; font-weight:600; font-size:.9rem; border:1px solid var(--border); background:var(--surface); color:var(--ink); cursor:pointer; transition:transform .15s, border-color .15s;}
+  .btn:hover{transform:translateY(-1px); border-color:var(--accent);}
+  .btn.primary{background:var(--accent); color:var(--accent-ink); border-color:transparent;}
+  .btn.ghost{background:transparent;}
+  .btn:disabled{opacity:.4; cursor:not-allowed; transform:none;}
+  .btn.small{padding:7px 13px; font-size:.8rem;}
+
+  table{width:100%; border-collapse:collapse; font-size:.9rem;}
+  th,td{text-align:left; padding:9px 8px; border-bottom:1px solid var(--border); vertical-align:middle;}
+  th{font-family:var(--font-mono); font-size:.66rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-faint); font-weight:600;}
+  .table-wrap{overflow-x:auto; border-radius:var(--radius-m); border:1px solid var(--border);}
+  .table-wrap table{margin:0;}
+  .table-wrap tr:last-child td{border-bottom:none;}
+
+  textarea,input[type="text"],input[type="number"]{width:100%; border-radius:var(--radius-s); border:1.5px solid var(--border); background:var(--surface-2); color:var(--ink); padding:10px 12px; font-family:var(--font-body); font-size:.9rem; resize:vertical;}
+  textarea:focus,input[type="text"]:focus,input[type="number"]:focus{outline:none; border-color:var(--accent); background:var(--surface);}
+  label.field-label{display:block; font-size:.8rem; font-weight:600; color:var(--ink-dim); margin-bottom:6px;}
+
+  .meta-row{display:flex; flex-wrap:wrap; gap:9px; margin-bottom:18px;}
+  .meta-pill{display:inline-flex; align-items:center; gap:7px; font-size:.76rem; font-weight:600; padding:6px 12px; border-radius:99px; background:var(--surface-2); border:1px solid var(--border); color:var(--ink-dim);}
+  .outcome-list{display:grid; gap:9px; margin-top:6px;}
+  .outcome-item{display:flex; gap:12px; align-items:flex-start; padding:12px 14px; border-radius:var(--radius-s); background:var(--surface-2); border:1px solid var(--border);}
+  .outcome-item i{color:var(--good); margin-top:2px;}
+  .question-card{background:linear-gradient(155deg, var(--surface), var(--surface-2)); border:1px solid var(--border); border-radius:var(--radius-l); padding:24px; box-shadow:var(--shadow); margin:20px 0;}
+  .question-card .tag{font-family:var(--font-mono); font-size:.7rem; color:var(--accent); text-transform:uppercase; letter-spacing:.1em; font-weight:700;}
+  .question-card blockquote{margin:12px 0 0; font-family:var(--font-display); font-weight:600; font-size:1.15rem; line-height:1.4;}
+
+  .stem-hero{display:flex; gap:10px; margin:6px 0 20px;}
+  .stem-hero span{font-family:var(--font-display); font-weight:800; font-size:clamp(2.2rem,9vw,3.4rem); line-height:1; border-radius:16px; width:1.5em; height:1.5em; display:inline-flex; align-items:center; justify-content:center; opacity:0; transform:translateY(14px) scale(.9); animation: letterIn .55s cubic-bezier(.2,.7,.3,1) forwards;}
+  .stem-hero span:nth-child(1){background:var(--s-soft); color:var(--s); animation-delay:.05s;}
+  .stem-hero span:nth-child(2){background:var(--t-soft); color:var(--t); animation-delay:.18s;}
+  .stem-hero span:nth-child(3){background:var(--e-soft); color:var(--e); animation-delay:.31s;}
+  .stem-hero span:nth-child(4){background:var(--m-soft); color:var(--m); animation-delay:.44s;}
+  @keyframes letterIn{to{opacity:1; transform:translateY(0) scale(1);}}
+  @media (prefers-reduced-motion: reduce){ .stem-hero span{animation:none; opacity:1; transform:none;} }
+
+  .howto{display:flex; gap:12px; align-items:flex-start; padding:15px 18px; border-radius:var(--radius-m); background:var(--accent-soft); border:1px solid color-mix(in srgb, var(--accent) 40%, transparent); margin:18px 0;}
+  .howto i{color:var(--accent); margin-top:3px;}
+  .howto b{color:var(--accent);}
+
+  .step{padding:34px 0; border-top:1px solid var(--border); scroll-margin-top:90px; opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease;}
+  .step.visible{opacity:1; transform:translateY(0);}
+  .step:first-of-type{border-top:none;}
+  .step-head{display:flex; gap:16px; align-items:flex-start; margin-bottom:6px;}
+  .step-icon{width:42px; height:42px; border-radius:13px; background:var(--accent-soft); color:var(--accent); font-family:var(--font-display); font-weight:800; font-size:1.05rem; display:flex; align-items:center; justify-content:center; flex:none;}
+  .step-eyebrow{display:inline-flex; align-items:center; gap:7px; font-family:var(--font-mono); font-size:.72rem; letter-spacing:.06em; color:var(--ink-faint); font-weight:600;}
+  .step h2{font-size:clamp(1.3rem,3vw,1.7rem); margin:2px 0 8px; font-weight:700;}
+  .step .lede{color:var(--ink-dim); font-size:1rem; max-width:70ch; margin:0 0 18px;}
+
+  .role-card{display:flex; gap:12px; align-items:flex-start; padding:14px; border-radius:var(--radius-m); border:1px solid var(--border); background:var(--surface);}
+  .role-card .ricon{width:38px; height:38px; border-radius:11px; background:var(--accent-soft); color:var(--accent); display:flex; align-items:center; justify-content:center; flex:none;}
+  .role-card b{font-size:.9rem;} .role-card p{margin:3px 0 0; font-size:.8rem; color:var(--ink-dim);}
+
+  .pull{font-family:var(--font-display); font-weight:600; font-size:clamp(1rem,2vw,1.25rem); line-height:1.5; padding:20px 24px; border-radius:var(--radius-l); background:linear-gradient(155deg,var(--surface),var(--surface-2)); border:1px solid var(--border); position:relative;}
+  .pull i.fa-quote-left{position:absolute; top:14px; left:16px; opacity:.15; font-size:1.3rem;}
+
+  .survey-q{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-m); padding:16px 18px; margin-bottom:12px; box-shadow:var(--shadow);}
+  .survey-q .sqhead{display:flex; align-items:center; gap:8px; margin-bottom:10px;}
+  .survey-q .sqnum{width:22px; height:22px; border-radius:7px; background:var(--surface-3); color:var(--ink-dim); font-family:var(--font-mono); font-size:.72rem; font-weight:700; display:flex; align-items:center; justify-content:center; flex:none;}
+  .survey-q b{font-size:.88rem;}
+  .survey-opts{display:flex; gap:8px; flex-wrap:wrap;}
+  .survey-opt{flex:1; min-width:100px; padding:10px 8px; border-radius:var(--radius-s); border:1.5px solid var(--border); background:var(--surface-2); cursor:pointer; font-size:.8rem; font-weight:600; text-align:center; transition:all .15s; color:var(--ink);}
+  .survey-opt:hover{border-color:var(--accent);}
+  .survey-opt.picked{border-color:var(--accent); background:var(--accent-soft); color:var(--accent);}
+  .survey-ticket{display:none; align-items:center; gap:12px; padding:14px 16px; border-radius:var(--radius-m); background:var(--s-soft); border:1px solid color-mix(in srgb, var(--s) 40%, transparent); margin-top:10px;}
+  .survey-ticket.show{display:flex;}
+  .survey-ticket i{color:var(--s); font-size:1.2rem;}
+  .survey-ticket b{color:var(--s); display:block; font-size:.85rem;}
+  .survey-ticket span{font-size:.78rem; color:var(--ink-dim);}
+
+  .script-list{display:grid; gap:8px; margin:14px 0;}
+  .script-row{display:flex; gap:10px; align-items:center; padding:10px 13px; border-radius:var(--radius-s); border:1px solid var(--border); background:var(--surface); font-size:.84rem;}
+  .script-row .sav{width:28px; height:28px; border-radius:8px; background:var(--surface-3); color:var(--ink-dim); font-family:var(--font-mono); font-weight:700; font-size:.74rem; display:flex; align-items:center; justify-content:center; flex:none;}
+  .script-row .vals span{padding:2px 8px; border-radius:99px; background:var(--surface-2); font-size:.76rem; font-weight:600; margin-right:5px; display:inline-block; margin-top:3px;}
+
+  .tally-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); padding:18px 20px; box-shadow:var(--shadow);}
+  .tally-qtitle{font-size:.8rem; font-weight:700; color:var(--ink-dim); margin:14px 0 8px; text-transform:uppercase; letter-spacing:.04em; font-family:var(--font-mono);}
+  .tally-qtitle:first-child{margin-top:0;}
+  .tally-row{display:grid; grid-template-columns:1fr auto auto; gap:10px; align-items:center; padding:8px 0; border-bottom:1px dashed var(--border);}
+  .tally-row:last-child{border-bottom:none;}
+  .tally-opt-label{font-size:.85rem; font-weight:600;}
+  .tally-marks{font-family:var(--font-mono); min-width:26px; text-align:center; font-weight:700; font-size:1rem;}
+  .tally-btns{display:flex; gap:5px;}
+  .tally-btn{width:28px; height:28px; border-radius:8px; border:1px solid var(--border); background:var(--surface-2); cursor:pointer; font-weight:700; font-size:.85rem; color:var(--ink);}
+  .tally-btn:hover{border-color:var(--accent);}
+  .tally-check{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:14px; font-size:.82rem; padding:10px 14px; border-radius:var(--radius-s); background:var(--surface-2);}
+  .tally-check input{width:64px; flex:none;}
+  .tally-check .verdict{font-weight:700; font-family:var(--font-mono); font-size:.78rem;}
+
+  .agg-table th,.agg-table td{text-align:center; padding:7px 6px;}
+  .agg-table th:first-child, .agg-table td:first-child{text-align:left;}
+  .agg-table tr.you td:first-child{font-weight:700; color:var(--accent);}
+  .agg-table tr.total td{font-weight:700; font-family:var(--font-mono); background:var(--surface-2);}
+  .agg-tabs{display:flex; gap:6px; margin-bottom:12px; flex-wrap:wrap;}
+  .agg-tab{padding:7px 14px; border-radius:99px; border:1.5px solid var(--border); background:var(--surface-2); cursor:pointer; font-size:.8rem; font-weight:600; color:var(--ink);}
+  .agg-tab.active{border-color:var(--accent); background:var(--accent-soft); color:var(--accent);}
+  .agg-check{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:12px; font-size:.82rem; padding:10px 14px; border-radius:var(--radius-s);}
+  .agg-check.ok{background:var(--s-soft); color:var(--s);}
+  .agg-check.bad{background:var(--m-soft); color:var(--m);}
+  .agg-check.wait{background:var(--surface-2); color:var(--ink-dim);}
+  .agg-check input{width:64px; flex:none;}
+
+  .chart-builder{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); padding:18px 20px; box-shadow:var(--shadow);}
+  .cb-controls{display:flex; gap:16px; flex-wrap:wrap; align-items:center; margin-bottom:14px;}
+  .cb-control-group{display:flex; align-items:center; gap:6px; font-size:.8rem; color:var(--ink-dim);}
+  .cb-control-group select{padding:6px 10px; border-radius:8px; border:1px solid var(--border); background:var(--surface-2); color:var(--ink); font-family:inherit; font-size:.82rem;}
+  .cb-title-input{width:100%; text-align:center; font-family:var(--font-display); font-weight:700; font-size:1.02rem; margin-bottom:10px; border:none; border-bottom:2px dashed var(--border); background:transparent; border-radius:0; padding:6px;}
+  .cb-title-input:focus{outline:none; border-bottom-color:var(--accent); background:transparent;}
+  .cb-canvas{position:relative; height:260px; display:flex; align-items:flex-end; gap:12px; padding:6px 6px 0 44px;
+    background-image: repeating-linear-gradient(to top, transparent, transparent calc(var(--cell,26px) - 1px), var(--border) calc(var(--cell,26px) - 1px), var(--border) var(--cell,26px));
+    border-left:2px solid var(--ink-faint); border-bottom:2px solid var(--ink-faint);
+  }
+  .cb-yaxis{position:absolute; left:0; top:0; bottom:0; width:40px;}
+  .cb-ytick{position:absolute; left:0; width:38px; text-align:right; font-family:var(--font-mono); font-size:.66rem; color:var(--ink-faint); transform:translateY(50%);}
+  .cb-bar-col{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; min-width:0;}
+  .cb-bar-val{font-family:var(--font-mono); font-weight:700; font-size:.8rem; margin-bottom:4px;}
+  .cb-bar{width:100%; max-width:60px; border-radius:8px 8px 0 0; transition:height .3s; min-height:2px;}
+  .cb-xlabels{display:flex; gap:12px; padding-left:44px; margin-top:8px;}
+  .cb-xlabel{flex:1; text-align:center; font-family:var(--font-display); font-weight:700; font-size:.8rem; min-width:0;}
+  .cb-axis-caption{text-align:center; font-size:.7rem; color:var(--ink-faint); margin-top:10px;}
+
+  .ratio-calc{display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap; margin:12px 0;}
+  .ratio-field{display:flex; flex-direction:column; gap:4px; flex:1; min-width:110px;}
+  .ratio-field label{font-size:.75rem; color:var(--ink-dim); font-weight:600;}
+  .ratio-result{margin-top:14px; padding:14px 16px; border-radius:var(--radius-m); background:var(--accent-soft); border:1px solid color-mix(in srgb, var(--accent) 40%, transparent); font-size:.9rem; color:var(--accent); font-weight:600; display:none;}
+  .ratio-result.show{display:block;}
+
+  .reflect-opts{display:grid; gap:8px; margin:12px 0 16px;}
+  .reflect-opt{display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-radius:var(--radius-s); border:1.5px solid var(--border); background:var(--surface-2); cursor:pointer; font-size:.86rem; font-weight:600; color:var(--ink); transition:all .15s;}
+  .reflect-opt:hover{border-color:var(--accent);}
+  .reflect-opt.picked{border-color:var(--accent); background:var(--accent-soft); color:var(--accent);}
+  .reflect-opt.picked i{opacity:1;}
+  .reflect-opt i{opacity:0; color:var(--accent);}
+
+  .done-check{display:flex; align-items:center; gap:10px; margin-top:20px; padding:12px 16px; border-radius:var(--radius-m); background:var(--surface-2); border:1px solid var(--border); font-size:.88rem; font-weight:600; cursor:pointer; width:fit-content;}
+  .done-check input{width:18px; height:18px; accent-color:var(--accent); cursor:pointer;}
+  .done-check.checked{background:var(--s-soft); border-color:color-mix(in srgb, var(--s) 40%, transparent); color:var(--s);}
+
+  .hw-fields{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:14px 0;}
+  @media (max-width:560px){ .hw-fields{grid-template-columns:1fr;} }
+  .field-warning{display:none; align-items:center; gap:8px; padding:10px 14px; border-radius:var(--radius-s); background:var(--m-soft); color:var(--m); font-size:.82rem; font-weight:600; margin-top:10px;}
+  .field-warning.show{display:flex;}
+  .submit-status{margin-top:14px; padding:12px 16px; border-radius:var(--radius-s); font-size:.85rem; font-weight:600; display:none; align-items:center; gap:9px;}
+  .submit-status.show{display:flex;}
+  .submit-status.ok{background:var(--s-soft); color:var(--s);}
+  .submit-status.err{background:var(--m-soft); color:var(--m);}
+  .submit-status.working{background:var(--surface-2); color:var(--ink-dim);}
+
+  .summary-wrap{display:flex; flex-direction:column; align-items:center; gap:18px; text-align:center; padding:20px 0;}
+  .ring-wrap{position:relative; width:150px; height:150px;}
+  .ring-wrap svg{width:100%; height:100%; transform:rotate(-90deg);}
+  .ring-bg{fill:none; stroke:var(--surface-3); stroke-width:10;}
+  .ring-fg{fill:none; stroke:var(--accent); stroke-width:10; stroke-linecap:round; transition:stroke-dashoffset .5s ease;}
+  .ring-label{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;}
+  .ring-label b{font-family:var(--font-display); font-size:1.5rem;}
+  .ring-label span{font-size:.72rem; color:var(--ink-faint);}
+
+  .backtotop{position:fixed; right:18px; bottom:18px; z-index:35; width:46px; height:46px; border-radius:99px; background:var(--accent); color:var(--accent-ink); border:none; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:var(--shadow-lg); opacity:0; transform:translateY(10px); pointer-events:none; transition:opacity .25s, transform .25s; font-size:1.1rem;}
+  .backtotop.show{opacity:1; transform:translateY(0); pointer-events:auto;}
+
+  .hw-hidden-pdf{position:fixed; left:-10000px; top:0; width:700px; padding:32px; font-family:'IBM Plex Sans','Segoe UI',sans-serif;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="stem-mark"><b>S</b><b>T</b><b>E</b><b>M</b></span><span class="brand-text">· 7 клас · Урок 3 · Домашнє опрацювання</span></div>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="progress-label" id="progressLabel">0/8</div>
+  <button class="icon-btn" id="tocBtn" aria-label="Зміст сторінки" title="Зміст сторінки"><i class="fa-solid fa-list-check"></i></button>
+  <button class="icon-btn" id="themeBtn" aria-label="Змінити тему" title="Тема: системна"><i class="fa-solid fa-circle-half-stroke"></i></button>
+</div>
+
+<div class="page">
+
+  <section id="intro">
+    <div class="meta-row">
+      <span class="meta-pill"><i class="fa-solid fa-layer-group"></i>Курс STEM · 7 клас</span>
+      <span class="meta-pill"><i class="fa-solid fa-book-open"></i>Урок 3 · домашнє опрацювання</span>
+      <span class="meta-pill"><i class="fa-solid fa-clock"></i>~30–35 хвилин</span>
+      <span class="meta-pill"><i class="fa-solid fa-house-laptop"></i>Виконується самостійно</span>
+    </div>
+    <div class="stem-hero" aria-hidden="true"><span>S</span><span>T</span><span>E</span><span>M</span></div>
+    <h1 style="font-size:clamp(1.6rem,4.5vw,2.4rem); margin:0 0 12px; font-weight:700;">Я в STEMі — ми в темі</h1>
+    <p class="lede" style="font-size:1.02rem;">Пройди самостійно весь цикл справжнього дослідження: анонімне анкетування, ручний підрахунок, об'єднання результатів кількох груп і побудова діаграми на основі даних. На уроці цей цикл проходив увесь клас разом — тут ти пройдеш ті самі кроки одноосібно, працюючи з власними відповідями та прикладом даних інших умовних груп.</p>
+
+    <div class="question-card">
+      <span class="tag"><i class="fa-solid fa-bullseye"></i> Дослідницьке питання уроку</span>
+      <blockquote>«Що насправді цікавить клас у STEM — і чи можемо ми дізнатися це не здогадками, а реальними даними?»</blockquote>
+      <div style="margin-top:18px; padding-top:16px; border-top:1px dashed var(--border); font-size:.85rem; color:var(--ink-dim);">
+        Кінцевий продукт: діаграма «STEM-профіль» за прикладом даних + один письмовий висновок, що спирається на конкретні числа + коротка домашня відповідь.
+      </div>
+    </div>
+
+    <b style="font-size:.95rem; display:block; margin:22px 0 8px;">Після цього опрацювання я вмію / розумію:</b>
+    <div class="outcome-list">
+      <div class="outcome-item"><i class="fa-solid fa-circle-check"></i><span>Проходжу весь цикл дослідження: збір → підрахунок → агрегація → діаграма → висновок.</span></div>
+      <div class="outcome-item"><i class="fa-solid fa-circle-check"></i><span>Пояснюю, чому об'єднання даних кількох груп дає точнішу картину, ніж дані однієї групи.</span></div>
+      <div class="outcome-item"><i class="fa-solid fa-circle-check"></i><span>Обираю масштаб і будую стовпчикову діаграму за реальними числами.</span></div>
+      <div class="outcome-item"><i class="fa-solid fa-circle-check"></i><span>Формулюю висновок, який спирається на конкретні цифри, а не на враження.</span></div>
+    </div>
+
+    <div class="howto">
+      <i class="fa-solid fa-lightbulb"></i>
+      <div><b>Як користуватися сторінкою:</b> прокручуй вниз — матеріал розбито на 8 пронумерованих кроків. У кожному кроці спершу прочитай пояснення, потім виконай вправу просто тут, на сторінці. Твої відповіді зберігаються автоматично в цьому браузері. Наприкінці кожного кроку постав галочку «Я виконав(ла) цей крок» — вона оновить прогрес-бар угорі. В останньому кроці потрібно виконати письмове домашнє завдання і зберегти сторінку як PDF для здачі в Google Classroom.</div>
+    </div>
+  </section>
+
+  <!-- STEP 1 -->
+  <section class="step" id="step-1" data-title="Три спільні запитання анкети" data-time="~2 хв">
+    <div class="step-head">
+      <div class="step-icon">1</div>
+      <div>
+        <span class="step-eyebrow">КРОК 1 / 8 · ~2 хв</span>
+        <h2>Від ідей класу — до трьох запитань анкети</h2>
+      </div>
+    </div>
+    <p class="lede">На попередньому уроці кожен придумав своє запитання для опитування класу. Якщо в кожного своє запитання — результат порахувати неможливо, забагато різних відповідей. Тому найкращі ідеї об'єднали в три однакові для всіх запитання з чіткими варіантами відповіді. Саме ці три запитання ти зараз і опрацюєш.</p>
+    <div class="survey-q" style="margin-bottom:10px;">
+      <div class="sqhead"><span class="sqnum">1</span><b>Яка STEM-галузь тобі найцікавіша?</b></div>
+      <div class="survey-opts">
+        <span class="survey-opt" style="color:var(--s); border-color:color-mix(in srgb, var(--s) 40%, var(--border));">S — природничі науки</span>
+        <span class="survey-opt" style="color:var(--t); border-color:color-mix(in srgb, var(--t) 40%, var(--border));">T — технології</span>
+        <span class="survey-opt" style="color:var(--e); border-color:color-mix(in srgb, var(--e) 40%, var(--border));">E — інженерія</span>
+        <span class="survey-opt" style="color:var(--m); border-color:color-mix(in srgb, var(--m) 40%, var(--border));">M — математика</span>
+      </div>
+    </div>
+    <div class="survey-q" style="margin-bottom:10px;">
+      <div class="sqhead"><span class="sqnum">2</span><b>Скільки годин на тиждень ти проводиш за технікою для навчання чи хобі (без соцмереж)?</b></div>
+      <div class="survey-opts">
+        <span class="survey-opt">&lt; 5 год</span><span class="survey-opt">5–10 год</span><span class="survey-opt">10–15 год</span><span class="survey-opt">&gt; 15 год</span>
+      </div>
+    </div>
+    <div class="survey-q" style="margin-bottom:16px;">
+      <div class="sqhead"><span class="sqnum">3</span><b>Який тип діяльності тобі подобається найбільше?</b></div>
+      <div class="survey-opts">
+        <span class="survey-opt">Експеримент</span><span class="survey-opt">Конструювання</span><span class="survey-opt">Розрахунки</span><span class="survey-opt">Комп'ютер</span>
+      </div>
+    </div>
+    <p style="font-size:.85rem; color:var(--ink-dim);">Ці варіанти вибору поки що просто для ознайомлення (не натискаються) — у наступному кроці ти відповіси на ці самі три запитання по-справжньому.</p>
+    <label class="done-check"><input type="checkbox" data-step="1"> Я виконав(ла) цей крок ✓</label>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="step" id="step-2" data-title="Заповни свою анкету" data-time="~3 хв">
+    <div class="step-head">
+      <div class="step-icon">2</div>
+      <div>
+        <span class="step-eyebrow">КРОК 2 / 8 · ~3 хв</span>
+        <h2>Заповни свою анкету</h2>
+      </div>
+    </div>
+    <p class="lede">Обери по одному варіанту в кожному запитанні. Це твоя анонімна відповідь — вона зберігається тільки на твоєму пристрої, і саме її ти будеш використовувати як приклад у наступних кроках.</p>
+    <div class="grid g2-lead" style="align-items:start;">
+      <div>
+        <div class="survey-q">
+          <div class="sqhead"><span class="sqnum">1</span><b>Яка STEM-галузь тобі найцікавіша?</b></div>
+          <div class="survey-opts" id="myQ1">
+            <span class="survey-opt" data-q="q1" data-c="S" style="color:var(--s);">S — природничі науки</span>
+            <span class="survey-opt" data-q="q1" data-c="T" style="color:var(--t);">T — технології</span>
+            <span class="survey-opt" data-q="q1" data-c="E" style="color:var(--e);">E — інженерія</span>
+            <span class="survey-opt" data-q="q1" data-c="M" style="color:var(--m);">M — математика</span>
+          </div>
+        </div>
+        <div class="survey-q">
+          <div class="sqhead"><span class="sqnum">2</span><b>Годин на тиждень за технікою (без соцмереж)?</b></div>
+          <div class="survey-opts" id="myQ2">
+            <span class="survey-opt" data-q="q2" data-c="lt5">&lt; 5 год</span>
+            <span class="survey-opt" data-q="q2" data-c="5-10">5–10 год</span>
+            <span class="survey-opt" data-q="q2" data-c="10-15">10–15 год</span>
+            <span class="survey-opt" data-q="q2" data-c="gt15">&gt; 15 год</span>
+          </div>
+        </div>
+        <div class="survey-q" style="margin-bottom:0;">
+          <div class="sqhead"><span class="sqnum">3</span><b>Який тип діяльності подобається найбільше?</b></div>
+          <div class="survey-opts" id="myQ3">
+            <span class="survey-opt" data-q="q3" data-c="exp">Експеримент</span>
+            <span class="survey-opt" data-q="q3" data-c="con">Конструювання</span>
+            <span class="survey-opt" data-q="q3" data-c="calc">Розрахунки</span>
+            <span class="survey-opt" data-q="q3" data-c="comp">Комп'ютер</span>
+          </div>
+        </div>
+        <div class="survey-ticket" id="myTicket">
+          <i class="fa-solid fa-check-circle"></i>
+          <div><b>Анкету заповнено!</b><span id="myTicketText"></span></div>
+        </div>
+      </div>
+      <div class="card" style="font-size:.85rem; color:var(--ink-dim);">
+        <b style="color:var(--ink);"><i class="fa-solid fa-lightbulb" style="color:var(--accent);"></i> Чому анонімно?</b>
+        <p style="margin:8px 0 0;">Так відповіді чесніші — ніхто не обирає «правильний», на його думку, варіант, щоб сподобатись однокласникам чи вчителю. У реальному дослідженні саме анонімність підвищує довіру до даних.</p>
+      </div>
+    </div>
+    <label class="done-check"><input type="checkbox" data-step="2"> Я виконав(ла) цей крок ✓</label>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="step" id="step-3" data-title="Порахуй умовну групу" data-time="~5 хв">
+    <div class="step-head">
+      <div class="step-icon">3</div>
+      <div>
+        <span class="step-eyebrow">КРОК 3 / 8 · ~5 хв</span>
+        <h2>Порахуй відповіді умовної групи</h2>
+      </div>
+    </div>
+    <p class="lede">На уроці цю частину виконувала ціла група: один учень називав свої відповіді, а «рахівник» ставив тальлі-риску. Тут ти сам собі «рахівник»: нижче — відповіді п'яти умовних учнів (ніби ти щойно почув їх голосом). Порахуй кожну відповідь, натискаючи «+1» у відповідному рядку таблиці підрахунку.</p>
+    <div class="script-list" id="scriptList"></div>
+    <div class="grid g2-lead" style="align-items:start;">
+      <div class="tally-card">
+        <div id="tallyBody"></div>
+        <div class="tally-check">
+          <span>Учнів в умовній групі:</span>
+          <input type="number" id="tallyGroupSize" min="1" max="40" placeholder="скільки?">
+          <span class="verdict" id="tallyVerdict">—</span>
+        </div>
+        <div style="display:flex; justify-content:flex-end; margin-top:12px;">
+          <button type="button" class="btn ghost small" id="tallyReset"><i class="fa-solid fa-rotate-left"></i> Скинути підрахунок</button>
+        </div>
+      </div>
+      <div class="card" style="font-size:.85rem; color:var(--ink-dim);">
+        <b style="color:var(--ink);"><i class="fa-solid fa-triangle-exclamation" style="color:var(--e);"></i> Перевірка</b>
+        <p style="margin:8px 0 0;">Сума рисок у кожному запитанні має дорівнювати кількості учнів у групі (їх п'ятеро). Не збігається? Хтось із відповідей пропущений або порахований двічі — перерахуй ще раз, звіряючись зі списком зліва.</p>
+      </div>
+    </div>
+    <label class="done-check"><input type="checkbox" data-step="3"> Я виконав(ла) цей крок ✓</label>
+  </section>
+
+  <!-- STEP 4 -->
+  <section class="step" id="step-4" data-title="Об'єднай дані кількох груп" data-time="~4 хв">
+    <div class="step-head">
+      <div class="step-icon">4</div>
+      <div>
+        <span class="step-eyebrow">КРОК 4 / 8 · ~4 хв</span>
+        <h2>Об'єднай числа кількох груп</h2>
+      </div>
+    </div>
+    <p class="lede">Так само працюють соціологи, коли досліджують думку великої країни: рахують частинами, а потім об'єднують. Рядок «Твоя умовна група» вже заповнено з попереднього кроку. Рядки 2–5 — це дані ще чотирьох умовних груп (наче їх щойно озвучили однокласники). Переглянь таблицю й перевір суму.</p>
+    <div class="agg-tabs" id="aggTabs"></div>
+    <div class="table-wrap agg-table"><table id="aggTable"></table></div>
+    <div class="agg-check" id="aggCheck">
+      <span>Учнів в усьому наборі даних:</span>
+      <span class="mono" style="font-weight:700;">23</span>
+      <span id="aggVerdictText"></span>
+    </div>
+    <label class="done-check"><input type="checkbox" data-step="4"> Я виконав(ла) цей крок ✓</label>
+  </section>
+
+  <!-- STEP 5 -->
+  <section class="step" id="step-5" data-title="Побудуй діаграму" data-time="~6 хв">
+    <div class="step-head">
+      <div class="step-icon">5</div>
+      <div>
+        <span class="step-eyebrow">КРОК 5 / 8 · ~6 хв</span>
+        <h2>STEM-профіль за даними п'яти груп</h2>
+      </div>
+    </div>
+    <p class="lede">Обери, скільки учнів «коштує» одна клітинка — це і є масштаб діаграми. Дані підтягнуться автоматично з таблиці об'єднання попереднього кроку. Спробуй різні запитання й масштаби.</p>
+    <div class="chart-builder">
+      <input type="text" class="cb-title-input" id="cbTitle" value="STEM-профіль (5 умовних груп)" placeholder="Назва діаграми">
+      <div class="cb-controls">
+        <div class="cb-control-group">
+          <label for="cbQuestion">Дані за запитанням:</label>
+          <select id="cbQuestion">
+            <option value="q1">1. Галузь інтересу</option>
+            <option value="q2">2. Години за технікою</option>
+            <option value="q3">3. Тип діяльності</option>
+          </select>
+        </div>
+        <div class="cb-control-group">
+          <label for="cbScale">1 клітинка =</label>
+          <select id="cbScale">
+            <option value="1">1 учень</option>
+            <option value="2">2 учні</option>
+            <option value="5">5 учнів</option>
+          </select>
+        </div>
+      </div>
+      <div class="cb-canvas" id="cbCanvas"></div>
+      <div class="cb-xlabels" id="cbXLabels"></div>
+      <div class="cb-axis-caption">Горизонтальна вісь — варіант відповіді · вертикальна вісь — кількість учнів</div>
+    </div>
+    <div class="card" style="font-size:.85rem; color:var(--ink-dim); margin-top:14px;">
+      <b style="color:var(--ink);"><i class="fa-solid fa-star" style="color:var(--e);"></i> Високий рівень</b>
+      <p style="margin:8px 0 0;">Побудуй також діаграму за запитанням 2 і за запитанням 3 (обери в списку вище) — і визнач, у скільки разів найпопулярніший варіант переважає найменш популярний (калькулятор — у наступному кроці).</p>
+    </div>
+    <label class="done-check"><input type="checkbox" data-step="5"> Я виконав(ла) цей крок ✓</label>
+  </section>
+
+  <!-- STEP 6 -->
+  <section class="step" id="step-6" data-title="У скільки разів більше?" data-time="~4 хв">
+    <div class="step-head">
+      <div class="step-icon">6</div>
+      <div>
+        <span class="step-eyebrow">КРОК 6 / 8 · ~4 хв</span>
+        <h2>Сформулюй висновок із числами</h2>
+      </div>
+    </div>
+    <p class="lede">Найкращий дослідницький висновок називає найпопулярніший і найменш популярний варіант і показує, у скільки разів один переважає інший — не «нам подобається техніка», а «у X разів більше, ніж...».</p>
+    <div class="grid g2-lead" style="align-items:start;">
+      <div class="chart-builder">
+        <b style="font-size:.88rem; display:block; margin-bottom:10px;"><i class="fa-solid fa-calculator" style="color:var(--accent);"></i> Калькулятор кратності</b>
+        <div class="ratio-calc">
+          <div class="ratio-field"><label for="ratioMax">Найбільше число</label><input type="number" id="ratioMax" min="0" placeholder="напр. 9"></div>
+          <div class="ratio-field"><label for="ratioMin">Найменше число</label><input type="number" id="ratioMin" min="0" placeholder="напр. 4"></div>
+          <button type="button" class="btn primary small" id="ratioCalc">Порахувати</button>
+          <button type="button" class="btn ghost small" id="ratioAuto">З діаграми вище</button>
+        </div>
+        <div class="ratio-result" id="ratioResult"></div>
+      </div>
+      <div class="pull">
+        <i class="fa-solid fa-quote-left"></i>
+        «У нашому прикладі найбільше цікавляться T — 9 осіб, а найменше S — лише 5, тобто майже вдвічі менше» — саме така різниця між враженням і дослідницьким висновком: враження каже «подобається», висновок каже «у скільки разів і чому».
+      </div>
+    </div>
+    <label class="done-check"><input type="checkbox" data-step="6"> Я виконав(ла) цей крок ✓</label>
+  </section>
+
+  <!-- STEP 7 -->
+  <section class="step" id="step-7" data-title="Рефлексія" data-time="~2 хв">
+    <div class="step-head">
+      <div class="step-icon">7</div>
+      <div>
+        <span class="step-eyebrow">КРОК 7 / 8 · ~2 хв</span>
+        <h2>Що було найскладнішим сьогодні?</h2>
+      </div>
+    </div>
+    <p class="lede">Оціни чесно свій власний досвід опрацювання — це допоможе тобі помітити, яка навичка потребує ще практики.</p>
+    <div class="reflect-opts" id="reflectOpts"></div>
+    <label class="field-label" for="reflectText">Подумай і напиши: якби ці самі три запитання поставили не твоєму класу, а цілій паралелі 7-х класів, результат був би такий самий чи інший? Чому?</label>
+    <textarea id="reflectText" rows="3" placeholder="Моя думка…"></textarea>
+    <label class="done-check"><input type="checkbox" data-step="7"> Я виконав(ла) цей крок ✓</label>
+  </section>
+
+  <!-- STEP 8 -->
+  <section class="step" id="step-8" data-title="Домашнє завдання і здача" data-time="~5 хв">
+    <div class="step-head">
+      <div class="step-icon">8</div>
+      <div>
+        <span class="step-eyebrow">КРОК 8 / 8 · ~5 хв</span>
+        <h2>Домашнє завдання і здача роботи</h2>
+      </div>
+    </div>
+    <p class="lede">Дай письмову відповідь (1–2 речення), а потім збережи всю сторінку як PDF і прикріпи його до завдання в Google Classroom.</p>
+    <div class="card hw-card" style="display:flex; gap:16px; align-items:flex-start;">
+      <div class="hicon" style="width:48px; height:48px; border-radius:14px; background:var(--accent-soft); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex:none;"><i class="fa-solid fa-house"></i></div>
+      <div style="flex:1;">
+        <b style="font-size:.9rem;">Письмове завдання</b>
+        <p style="font-size:.85rem; color:var(--ink-dim); margin:8px 0 12px;">Чи можуть дані, подібні до сьогоднішніх (опитування, підрахунок, діаграма), допомогти розв'язувати серйозні світові проблеми — голод, брак чистої води, енергію? Наведи одне конкретне припущення, як саме.</p>
+        <textarea id="hwText" rows="4" placeholder="Моє припущення…"></textarea>
+      </div>
+    </div>
+
+    <div class="hw-fields">
+      <div>
+        <label class="field-label" for="hwName">Ім'я та прізвище *</label>
+        <input type="text" id="hwName" placeholder="напр. Олена Ковальчук">
+      </div>
+      <div>
+        <label class="field-label" for="hwClass">Клас *</label>
+        <input type="text" id="hwClass" placeholder="напр. 7-Б">
+      </div>
+    </div>
+    <div class="field-warning" id="hwWarning"><i class="fa-solid fa-triangle-exclamation"></i><span>Заповни ім'я, прізвище і клас перед збереженням у PDF.</span></div>
+
+    <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+      <button type="button" class="btn primary" id="savePdfBtn"><i class="fa-solid fa-file-pdf"></i> Зберегти в PDF</button>
+      <span style="font-size:.8rem; color:var(--ink-faint);">Файл прикріпи до завдання уроку 3 у Google Classroom.</span>
+    </div>
+    <div class="submit-status" id="submitStatus"></div>
+
+    <label class="done-check" style="margin-top:22px;"><input type="checkbox" data-step="8"> Я виконав(ла) цей крок ✓</label>
+  </section>
+
+  <!-- SUMMARY -->
+  <section id="summary" style="padding:40px 0 0; border-top:1px solid var(--border); margin-top:10px;">
+    <div class="summary-wrap">
+      <div class="ring-wrap">
+        <svg viewBox="0 0 120 120">
+          <circle class="ring-bg" cx="60" cy="60" r="50"></circle>
+          <circle class="ring-fg" id="ringFg" cx="60" cy="60" r="50" stroke-dasharray="314" stroke-dashoffset="314"></circle>
+        </svg>
+        <div class="ring-label"><b id="ringText">0/8</b><span>кроків</span></div>
+      </div>
+      <h2 style="margin:0;">Дякую за роботу!</h2>
+      <p class="lede" style="max-width:60ch;">Ти пройшов(ла) увесь дослідницький цикл: від анкети до висновку з числами. Не забудь зберегти PDF у кроці 8 і здати його в Google Classroom.</p>
+      <div class="card" style="max-width:520px; display:flex; gap:14px; align-items:flex-start; text-align:left;">
+        <i class="fa-solid fa-arrow-right-long" style="color:var(--accent); margin-top:4px;"></i>
+        <div style="font-size:.88rem; color:var(--ink-dim);"><b style="color:var(--ink);">Наступний урок «Сталий розвиток»:</b> ми застосуємо щойно освоєну логіку роботи з даними вже не до власного класу, а до реальних відкритих даних про Цілі Сталого Розвитку.</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<button class="backtotop" id="backToTop" aria-label="Нагору" title="Нагору"><i class="fa-solid fa-arrow-up"></i></button>
+
+<div class="toc-overlay" id="tocOverlay">
+  <div class="toc-card">
+    <h3>Зміст сторінки</h3>
+    <p class="lede">Обери розділ, щоб перейти напряму.</p>
+    <div class="toc-list" id="tocList"></div>
+  </div>
+</div>
+
+<div class="hw-hidden-pdf" id="pdfTemplate" aria-hidden="true"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  function escapeHtml(str){
+    return String(str).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  /* ================= THEME (system / light / dark) ================= */
+  var THEME_KEY = 'stem7hw3-theme';
+  var themeBtn = document.getElementById('themeBtn');
+  var themeIcons = { system:'fa-circle-half-stroke', light:'fa-sun', dark:'fa-moon' };
+  var themeTitles = { system:'Тема: системна', light:'Тема: світла', dark:'Тема: темна' };
+  function applyTheme(mode){
+    var root = document.documentElement;
+    if(mode === 'light' || mode === 'dark'){ root.setAttribute('data-theme', mode); }
+    else { root.removeAttribute('data-theme'); mode = 'system'; }
+    themeBtn.innerHTML = '<i class="fa-solid ' + themeIcons[mode] + '"></i>';
+    themeBtn.title = themeTitles[mode];
+  }
+  var storedTheme = 'system';
+  try{ storedTheme = localStorage.getItem(THEME_KEY) || 'system'; }catch(e){}
+  applyTheme(storedTheme);
+  themeBtn.addEventListener('click', function(){
+    var order = ['system','light','dark'];
+    var cur = 'system';
+    try{ cur = localStorage.getItem(THEME_KEY) || 'system'; }catch(e){}
+    var next = order[(order.indexOf(cur)+1) % order.length];
+    applyTheme(next);
+    try{ localStorage.setItem(THEME_KEY, next); }catch(e){}
+  });
+
+  /* ================= TOC ================= */
+  var TOC_SECTIONS = [
+    {id:'intro', title:'Вступ'},
+    {id:'step-1', title:'1. Три запитання анкети'},
+    {id:'step-2', title:'2. Заповни свою анкету'},
+    {id:'step-3', title:'3. Порахуй умовну групу'},
+    {id:'step-4', title:"4. Об'єднай дані груп"},
+    {id:'step-5', title:'5. Побудуй діаграму'},
+    {id:'step-6', title:'6. У скільки разів більше?'},
+    {id:'step-7', title:'7. Рефлексія'},
+    {id:'step-8', title:'8. Домашнє завдання і здача'},
+    {id:'summary', title:'Підсумок'}
+  ];
+  function renderToc(){
+    var list = document.getElementById('tocList');
+    list.innerHTML = '';
+    TOC_SECTIONS.forEach(function(sec, i){
+      var stepNum = sec.id.indexOf('step-') === 0 ? sec.id.replace('step-','') : null;
+      var done = stepNum && isStepDone(stepNum);
+      var item = document.createElement('button');
+      item.type = 'button';
+      item.className = 'toc-item' + (done ? ' done' : '');
+      item.innerHTML = '<span class="num mono">' + String(i).padStart(2,'0') + '</span>' +
+        '<span class="ttl">' + sec.title + '</span>' +
+        '<i class="fa-solid fa-check chk"></i>';
+      item.addEventListener('click', function(){
+        document.getElementById(sec.id).scrollIntoView({behavior:'smooth', block:'start'});
+        closeToc();
+      });
+      list.appendChild(item);
+    });
+  }
+  function openToc(){ document.getElementById('tocOverlay').classList.add('open'); renderToc(); }
+  function closeToc(){ document.getElementById('tocOverlay').classList.remove('open'); }
+  document.getElementById('tocBtn').addEventListener('click', openToc);
+  document.getElementById('tocOverlay').addEventListener('click', function(e){ if(e.target.id === 'tocOverlay') closeToc(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeToc(); });
+
+  /* ================= PROGRESS ================= */
+  var DONE_KEY = 'stem7hw3-done';
+  var STEP_TOTAL = 8;
+  var doneSteps = {};
+  try{ doneSteps = JSON.parse(localStorage.getItem(DONE_KEY) || '{}'); }catch(e){}
+  function isStepDone(n){ return !!doneSteps[n]; }
+  function saveDone(){ try{ localStorage.setItem(DONE_KEY, JSON.stringify(doneSteps)); }catch(e){} }
+  function updateProgress(){
+    var count = 0;
+    for(var i=1;i<=STEP_TOTAL;i++){ if(doneSteps[i]) count++; }
+    var pct = Math.round((count/STEP_TOTAL)*100);
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressLabel').textContent = count + '/' + STEP_TOTAL;
+    var ring = document.getElementById('ringFg');
+    var circumference = 2 * Math.PI * 50;
+    ring.setAttribute('stroke-dasharray', circumference.toFixed(1));
+    ring.setAttribute('stroke-dashoffset', (circumference * (1 - count/STEP_TOTAL)).toFixed(1));
+    document.getElementById('ringText').textContent = count + '/' + STEP_TOTAL;
+  }
+  document.querySelectorAll('.done-check input[type="checkbox"]').forEach(function(cb){
+    var n = cb.getAttribute('data-step');
+    cb.checked = isStepDone(n);
+    cb.closest('.done-check').classList.toggle('checked', cb.checked);
+    cb.addEventListener('change', function(){
+      doneSteps[n] = cb.checked;
+      saveDone();
+      cb.closest('.done-check').classList.toggle('checked', cb.checked);
+      updateProgress();
+    });
+  });
+  updateProgress();
+
+  /* ================= scroll reveal + back to top ================= */
+  var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting) en.target.classList.add('visible'); });
+    }, {threshold:.08});
+    steps.forEach(function(s){ io.observe(s); });
+  } else {
+    steps.forEach(function(s){ s.classList.add('visible'); });
+  }
+  var backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function(){
+    backBtn.classList.toggle('show', window.scrollY > 500);
+  });
+  backBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+  /* ================= shared question model ================= */
+  var QUESTIONS = {
+    q1: { title:'Галузь інтересу', opts:[
+      {c:'S', label:'S', full:'Природничі науки', color:'var(--s)'},
+      {c:'T', label:'T', full:'Технології', color:'var(--t)'},
+      {c:'E', label:'E', full:'Інженерія', color:'var(--e)'},
+      {c:'M', label:'M', full:'Математика', color:'var(--m)'}
+    ]},
+    q2: { title:'Години за технікою', opts:[
+      {c:'lt5', label:'<5 год', full:'< 5 год', color:'var(--accent)'},
+      {c:'5-10', label:'5–10', full:'5–10 год', color:'var(--t)'},
+      {c:'10-15', label:'10–15', full:'10–15 год', color:'var(--e)'},
+      {c:'gt15', label:'>15 год', full:'> 15 год', color:'var(--m)'}
+    ]},
+    q3: { title:'Тип діяльності', opts:[
+      {c:'exp', label:'Дослід', full:'Експеримент', color:'var(--s)'},
+      {c:'con', label:'Констр.', full:'Конструювання', color:'var(--e)'},
+      {c:'calc', label:'Розрах.', full:'Розрахунки', color:'var(--m)'},
+      {c:'comp', label:'Комп.', full:"Комп'ютер", color:'var(--t)'}
+    ]}
+  };
+
+  /* ================= step 2: individual survey ================= */
+  var MY_KEY = 'stem7hw3-my-survey';
+  var mySurvey = {q1:null, q2:null, q3:null};
+  try{ var savedMy = JSON.parse(localStorage.getItem(MY_KEY) || 'null'); if(savedMy) mySurvey = savedMy; }catch(e){}
+
+  function paintMySurvey(){
+    document.querySelectorAll('#step-2 .survey-opt').forEach(function(el){
+      var q = el.getAttribute('data-q'), c = el.getAttribute('data-c');
+      el.classList.toggle('picked', mySurvey[q] === c);
+    });
+    var done = mySurvey.q1 && mySurvey.q2 && mySurvey.q3;
+    var ticket = document.getElementById('myTicket');
+    if(done){
+      ticket.classList.add('show');
+      var q1o = QUESTIONS.q1.opts.filter(function(o){return o.c===mySurvey.q1;})[0];
+      var q2o = QUESTIONS.q2.opts.filter(function(o){return o.c===mySurvey.q2;})[0];
+      var q3o = QUESTIONS.q3.opts.filter(function(o){return o.c===mySurvey.q3;})[0];
+      document.getElementById('myTicketText').textContent = q1o.full + ' · ' + q2o.full + ' · ' + q3o.full;
+    } else {
+      ticket.classList.remove('show');
+    }
+  }
+  document.querySelectorAll('#step-2 .survey-opt').forEach(function(el){
+    el.addEventListener('click', function(){
+      var q = el.getAttribute('data-q'), c = el.getAttribute('data-c');
+      mySurvey[q] = (mySurvey[q] === c) ? null : c;
+      try{ localStorage.setItem(MY_KEY, JSON.stringify(mySurvey)); }catch(e){}
+      paintMySurvey();
+    });
+  });
+  paintMySurvey();
+
+  /* ================= step 3: tally practice with fixed script ================= */
+  var SCRIPT = [
+    {name:'Учень А', q1:'T', q2:'10-15', q3:'comp'},
+    {name:'Учень Б', q1:'S', q2:'lt5', q3:'exp'},
+    {name:'Учень В', q1:'M', q2:'5-10', q3:'calc'},
+    {name:'Учень Г', q1:'T', q2:'gt15', q3:'con'},
+    {name:'Учень Д', q1:'E', q2:'5-10', q3:'exp'}
+  ];
+  (function renderScript(){
+    var wrap = document.getElementById('scriptList');
+    wrap.innerHTML = SCRIPT.map(function(s, i){
+      var q1o = QUESTIONS.q1.opts.filter(function(o){return o.c===s.q1;})[0];
+      var q2o = QUESTIONS.q2.opts.filter(function(o){return o.c===s.q2;})[0];
+      var q3o = QUESTIONS.q3.opts.filter(function(o){return o.c===s.q3;})[0];
+      return '<div class="script-row"><span class="sav">' + (i+1) + '</span>' +
+        '<div><b>' + s.name + '</b> відповідає: <span class="vals"><span>' + q1o.full + '</span><span>' + q2o.full + '</span><span>' + q3o.full + '</span></span></div></div>';
+    }).join('');
+  })();
+
+  var TALLY_KEY = 'stem7hw3-tally';
+  var TALLY = {q1:{},q2:{},q3:{}};
+  Object.keys(QUESTIONS).forEach(function(q){ QUESTIONS[q].opts.forEach(function(o){ TALLY[q][o.c] = 0; }); });
+  try{
+    var savedTally = JSON.parse(localStorage.getItem(TALLY_KEY) || 'null');
+    if(savedTally) TALLY = savedTally;
+  }catch(e){}
+  var tallyGroupSize = '';
+  try{ tallyGroupSize = localStorage.getItem('stem7hw3-tally-size') || ''; }catch(e){}
+
+  function saveTally(){ try{ localStorage.setItem(TALLY_KEY, JSON.stringify(TALLY)); }catch(e){} }
+
+  function renderTally(){
+    var body = document.getElementById('tallyBody');
+    var html = '';
+    Object.keys(QUESTIONS).forEach(function(qkey){
+      var q = QUESTIONS[qkey];
+      html += '<div class="tally-qtitle">' + (qkey==='q1'?'1':qkey==='q2'?'2':'3') + '. ' + q.title + '</div>';
+      q.opts.forEach(function(o){
+        html += '<div class="tally-row">' +
+          '<span class="tally-opt-label" style="color:' + o.color + ';">' + escapeHtml(o.full) + '</span>' +
+          '<span class="tally-marks mono">' + TALLY[qkey][o.c] + '</span>' +
+          '<span class="tally-btns">' +
+            '<button type="button" class="tally-btn" data-q="' + qkey + '" data-c="' + o.c + '" data-d="-1" aria-label="мінус">−</button>' +
+            '<button type="button" class="tally-btn" data-q="' + qkey + '" data-c="' + o.c + '" data-d="1" aria-label="плюс">+1</button>' +
+          '</span></div>';
+      });
+    });
+    body.innerHTML = html;
+    body.querySelectorAll('.tally-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var q = btn.getAttribute('data-q'), c = btn.getAttribute('data-c'), d = parseInt(btn.getAttribute('data-d'),10);
+        TALLY[q][c] = Math.max(0, TALLY[q][c] + d);
+        saveTally(); renderTally(); checkTally(); syncAggYourGroup();
+      });
+    });
+  }
+
+  function tallySum(qkey){
+    var s = 0; QUESTIONS[qkey].opts.forEach(function(o){ s += TALLY[qkey][o.c]; }); return s;
+  }
+
+  function checkTally(){
+    var verdict = document.getElementById('tallyVerdict');
+    var sizeInput = document.getElementById('tallyGroupSize');
+    var size = parseInt(sizeInput.value, 10);
+    if(!size){ verdict.textContent = '—'; verdict.style.color = 'var(--ink-faint)'; return; }
+    var sums = [tallySum('q1'), tallySum('q2'), tallySum('q3')];
+    if(sums.every(function(s){ return s === 0; })){ verdict.textContent = '—'; verdict.style.color = 'var(--ink-faint)'; return; }
+    var allMatch = sums.every(function(s){ return s === size; });
+    verdict.textContent = allMatch ? '✓ Збігається' : '✗ Перевір ще раз (' + sums.join('/') + ')';
+    verdict.style.color = allMatch ? 'var(--good)' : 'var(--bad)';
+  }
+
+  document.getElementById('tallyGroupSize').addEventListener('input', function(){
+    try{ localStorage.setItem('stem7hw3-tally-size', this.value); }catch(e){}
+    checkTally();
+  });
+  document.getElementById('tallyGroupSize').value = tallyGroupSize;
+  document.getElementById('tallyReset').addEventListener('click', function(){
+    Object.keys(QUESTIONS).forEach(function(q){ QUESTIONS[q].opts.forEach(function(o){ TALLY[q][o.c] = 0; }); });
+    saveTally(); renderTally(); checkTally(); syncAggYourGroup();
+  });
+  renderTally();
+  checkTally();
+
+  /* ================= step 4: aggregation with fixed sample groups ================= */
+  // SAMPLE_GROUPS[qkey][optCode] = [group2, group3, group4, group5] fixed numbers
+  var SAMPLE_GROUPS = {
+    q1: { S:[2,1,0,1], T:[1,2,3,1], E:[1,0,1,1], M:[1,1,1,1] },
+    q2: { 'lt5':[2,1,0,1], '5-10':[1,1,2,1], '10-15':[1,1,2,1], 'gt15':[1,1,1,1] },
+    q3: { exp:[1,1,2,1], con:[2,1,1,1], calc:[1,1,0,1], comp:[1,1,2,1] }
+  };
+  var CLASS_TOTAL = 23;
+  var aggActiveQ = 'q1';
+
+  function groupTotal(qkey, gi){
+    // gi 0..4 ; 0 = your group (from tally), 1..4 = sample
+    var s = 0;
+    QUESTIONS[qkey].opts.forEach(function(o){
+      if(gi === 0){ s += TALLY[qkey][o.c]; }
+      else { s += SAMPLE_GROUPS[qkey][o.c][gi-1]; }
+    });
+    return s;
+  }
+  function cellValue(qkey, code, gi){
+    if(gi === 0) return TALLY[qkey][code];
+    return SAMPLE_GROUPS[qkey][code][gi-1];
+  }
+  function columnTotal(qkey, code){
+    var s = TALLY[qkey][code];
+    SAMPLE_GROUPS[qkey][code].forEach(function(v){ s += v; });
+    return s;
+  }
+
+  function renderAggTabs(){
+    var tabs = document.getElementById('aggTabs');
+    tabs.innerHTML = '';
+    Object.keys(QUESTIONS).forEach(function(qkey, i){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'agg-tab' + (qkey === aggActiveQ ? ' active' : '');
+      b.textContent = (i+1) + '. ' + QUESTIONS[qkey].title;
+      b.addEventListener('click', function(){ aggActiveQ = qkey; renderAggTabs(); renderAggTable(); });
+      tabs.appendChild(b);
+    });
+  }
+
+  function renderAggTable(){
+    var q = QUESTIONS[aggActiveQ];
+    var table = document.getElementById('aggTable');
+    var head = '<thead><tr><th>Група</th>' + q.opts.map(function(o){ return '<th style="color:' + o.color + ';">' + escapeHtml(o.label) + '</th>'; }).join('') + '</tr></thead>';
+    var rows = '';
+    var labels = ['Твоя умовна група', 'Група 2', 'Група 3', 'Група 4', 'Група 5'];
+    for(var gi = 0; gi < 5; gi++){
+      rows += '<tr class="' + (gi===0?'you':'') + '"><td>' + labels[gi] + '</td>';
+      q.opts.forEach(function(o){
+        rows += '<td>' + cellValue(aggActiveQ, o.c, gi) + '</td>';
+      });
+      rows += '</tr>';
+    }
+    var totals = q.opts.map(function(o){ return columnTotal(aggActiveQ, o.c); });
+    rows += '<tr class="total"><td>Разом</td>' + totals.map(function(t){ return '<td>' + t + '</td>'; }).join('') + '</tr>';
+    table.innerHTML = head + '<tbody>' + rows + '</tbody>';
+    checkAgg();
+  }
+
+  function checkAgg(){
+    var wrap = document.getElementById('aggCheck');
+    var textEl = document.getElementById('aggVerdictText');
+    var q = QUESTIONS[aggActiveQ];
+    var sum = q.opts.reduce(function(a,o){ return a + columnTotal(aggActiveQ, o.c); }, 0);
+    var ok = sum === CLASS_TOTAL;
+    wrap.className = 'agg-check ' + (ok ? 'ok' : 'wait');
+    textEl.textContent = ok
+      ? '✓ Разом ' + sum + ' анкет — збігається.'
+      : 'Наразі пораховано: ' + sum + ' із ' + CLASS_TOTAL + '. Перевір підрахунок у кроці 3, якщо не збігається.';
+  }
+
+  function syncAggYourGroup(){
+    if(document.getElementById('step-4').classList.contains('visible') || true){ renderAggTable(); }
+  }
+  renderAggTabs();
+  renderAggTable();
+
+  /* ================= step 5: chart builder ================= */
+  function questionTotals(qkey){
+    return QUESTIONS[qkey].opts.map(function(o){ return columnTotal(qkey, o.c); });
+  }
+  function renderChart(){
+    var qkey = document.getElementById('cbQuestion').value;
+    var scale = parseInt(document.getElementById('cbScale').value, 10) || 1;
+    var q = QUESTIONS[qkey];
+    var data = questionTotals(qkey);
+    var max = Math.max(1, data.reduce(function(a,b){ return Math.max(a,b); }, 0));
+    var cellPx = 26;
+    var canvas = document.getElementById('cbCanvas');
+    canvas.style.setProperty('--cell', cellPx + 'px');
+    var numTicks = Math.max(2, Math.ceil(max/scale) + 1);
+    var canvasHeight = numTicks * cellPx;
+    canvas.style.height = canvasHeight + 'px';
+
+    var yaxis = '<div class="cb-yaxis">';
+    for(var t = 0; t < numTicks; t++){
+      yaxis += '<div class="cb-ytick" style="bottom:' + (t*cellPx) + 'px;">' + (t*scale) + '</div>';
+    }
+    yaxis += '</div>';
+
+    var bars = q.opts.map(function(o, i){
+      var val = data[i];
+      var h = Math.round((val/scale) * cellPx);
+      return '<div class="cb-bar-col">' +
+        '<span class="cb-bar-val">' + val + '</span>' +
+        '<div class="cb-bar" style="height:' + h + 'px; background:' + o.color + ';"></div>' +
+        '</div>';
+    }).join('');
+
+    canvas.innerHTML = yaxis + bars;
+    document.getElementById('cbXLabels').innerHTML = q.opts.map(function(o){
+      return '<span class="cb-xlabel" style="color:' + o.color + ';">' + escapeHtml(o.label) + '</span>';
+    }).join('');
+  }
+  document.getElementById('cbQuestion').addEventListener('change', renderChart);
+  document.getElementById('cbScale').addEventListener('change', renderChart);
+  renderChart();
+
+  /* ================= step 6: ratio calculator ================= */
+  function pluralRaz(n){
+    var r = Math.round(n);
+    if(r % 10 === 1 && r % 100 !== 11) return 'раз';
+    if(r % 10 >= 2 && r % 10 <= 4 && (r % 100 < 10 || r % 100 >= 20)) return 'рази';
+    return 'разів';
+  }
+  function computeRatio(){
+    var maxV = parseFloat(document.getElementById('ratioMax').value);
+    var minV = parseFloat(document.getElementById('ratioMin').value);
+    var out = document.getElementById('ratioResult');
+    if(!maxV || !minV || minV <= 0){
+      out.classList.remove('show');
+      return;
+    }
+    var ratio = (maxV/minV).toFixed(1).replace(/\.0$/, '');
+    out.classList.add('show');
+    out.innerHTML = '<i class="fa-solid fa-circle-info"></i> ' + maxV + ' проти ' + minV + ' — більше значення переважає менше приблизно у <b>' + ratio + ' ' + pluralRaz(parseFloat(ratio)) + '</b>.';
+  }
+  document.getElementById('ratioCalc').addEventListener('click', computeRatio);
+  document.getElementById('ratioAuto').addEventListener('click', function(){
+    var qkey = document.getElementById('cbQuestion').value;
+    var data = questionTotals(qkey);
+    var max = Math.max.apply(null, data);
+    var positives = data.filter(function(v){ return v > 0; });
+    var min = Math.min.apply(null, positives.length ? positives : [0]);
+    document.getElementById('ratioMax').value = max || '';
+    document.getElementById('ratioMin').value = min || '';
+    computeRatio();
+  });
+
+  /* ================= step 7: individual reflection ================= */
+  var REFLECT_OPTS = ['Заповнення анкети', 'Підрахунок відповідей', "Об'єднання даних груп", 'Побудова діаграми'];
+  var REFLECT_KEY = 'stem7hw3-reflect';
+  var reflectChoice = null;
+  try{ reflectChoice = localStorage.getItem(REFLECT_KEY) || null; }catch(e){}
+  (function buildReflect(){
+    var wrap = document.getElementById('reflectOpts');
+    REFLECT_OPTS.forEach(function(opt){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'reflect-opt' + (reflectChoice === opt ? ' picked' : '');
+      b.innerHTML = '<span>' + opt + '</span><i class="fa-solid fa-check"></i>';
+      b.addEventListener('click', function(){
+        reflectChoice = opt;
+        try{ localStorage.setItem(REFLECT_KEY, opt); }catch(e){}
+        wrap.querySelectorAll('.reflect-opt').forEach(function(el){ el.classList.remove('picked'); });
+        b.classList.add('picked');
+      });
+      wrap.appendChild(b);
+    });
+  })();
+
+  var REFLECT_TEXT_KEY = 'stem7hw3-reflect-text';
+  var reflectTextEl = document.getElementById('reflectText');
+  try{ reflectTextEl.value = localStorage.getItem(REFLECT_TEXT_KEY) || ''; }catch(e){}
+  reflectTextEl.addEventListener('input', function(){ try{ localStorage.setItem(REFLECT_TEXT_KEY, reflectTextEl.value); }catch(e){} });
+
+  /* ================= step 8: homework + submission ================= */
+  var HW_KEY = 'stem7hw3-homework';
+  var hwEl = document.getElementById('hwText');
+  try{ hwEl.value = localStorage.getItem(HW_KEY) || ''; }catch(e){}
+  hwEl.addEventListener('input', function(){ try{ localStorage.setItem(HW_KEY, hwEl.value); }catch(e){} });
+
+  var NAME_KEY = 'stem7hw3-name', CLASS_KEY = 'stem7hw3-class';
+  var nameEl = document.getElementById('hwName'), classEl = document.getElementById('hwClass');
+  try{ nameEl.value = localStorage.getItem(NAME_KEY) || ''; classEl.value = localStorage.getItem(CLASS_KEY) || ''; }catch(e){}
+  nameEl.addEventListener('input', function(){ try{ localStorage.setItem(NAME_KEY, nameEl.value); }catch(e){} });
+  classEl.addEventListener('input', function(){ try{ localStorage.setItem(CLASS_KEY, classEl.value); }catch(e){} });
+
+  function setStatus(kind, text){
+    var el = document.getElementById('submitStatus');
+    el.className = 'submit-status show ' + kind;
+    var icon = kind === 'ok' ? 'fa-circle-check' : (kind === 'err' ? 'fa-circle-exclamation' : 'fa-spinner fa-spin');
+    el.innerHTML = '<i class="fa-solid ' + icon + '"></i><span>' + text + '</span>';
+  }
+
+  function buildPdfTemplateHtml(){
+    var name = escapeHtml(nameEl.value.trim());
+    var cls = escapeHtml(classEl.value.trim());
+    var dateStr = new Date().toLocaleDateString('uk-UA');
+    var q1o = mySurvey.q1 ? QUESTIONS.q1.opts.filter(function(o){return o.c===mySurvey.q1;})[0] : null;
+    var q2o = mySurvey.q2 ? QUESTIONS.q2.opts.filter(function(o){return o.c===mySurvey.q2;})[0] : null;
+    var q3o = mySurvey.q3 ? QUESTIONS.q3.opts.filter(function(o){return o.c===mySurvey.q3;})[0] : null;
+
+    function aggTableHtml(){
+      var rowsHtml = '';
+      var labels = ['Твоя умовна група', 'Група 2', 'Група 3', 'Група 4', 'Група 5'];
+      Object.keys(QUESTIONS).forEach(function(qkey){
+        var q = QUESTIONS[qkey];
+        rowsHtml += '<div style="font-weight:700; color:#14162a !important; margin:14px 0 6px; font-size:12px;">' + q.title + '</div>';
+        rowsHtml += '<table style="width:100%; border-collapse:collapse; margin-bottom:6px;">';
+        rowsHtml += '<tr>' + '<td style="border:1px solid #cccccc !important; padding:5px 7px; font-size:11px; color:#14162a !important;"></td>' + q.opts.map(function(o){ return '<td style="border:1px solid #cccccc !important; padding:5px 7px; font-size:11px; color:#14162a !important; font-weight:700;">' + escapeHtml(o.label) + '</td>'; }).join('') + '</tr>';
+        for(var gi=0; gi<5; gi++){
+          rowsHtml += '<tr>' + '<td style="border:1px solid #cccccc !important; padding:5px 7px; font-size:11px; color:#14162a !important;">' + labels[gi] + '</td>' +
+            q.opts.map(function(o){ return '<td style="border:1px solid #cccccc !important; padding:5px 7px; font-size:11px; color:#14162a !important; text-align:center;">' + cellValue(qkey, o.c, gi) + '</td>'; }).join('') + '</tr>';
+        }
+        rowsHtml += '<tr>' + '<td style="border:1px solid #cccccc !important; padding:5px 7px; font-size:11px; color:#14162a !important; font-weight:700;">Разом</td>' +
+          q.opts.map(function(o){ return '<td style="border:1px solid #cccccc !important; padding:5px 7px; font-size:11px; color:#14162a !important; font-weight:700; text-align:center;">' + columnTotal(qkey, o.c) + '</td>'; }).join('') + '</tr>';
+        rowsHtml += '</table>';
+      });
+      return rowsHtml;
+    }
+
+    var ratioText = document.getElementById('ratioResult').classList.contains('show')
+      ? document.getElementById('ratioResult').textContent.trim()
+      : 'не заповнено';
+
+    var html = ''
+      + '<div style="font-family:Arial,Helvetica,sans-serif; color:#14162a !important; background:#ffffff !important;">'
+      + '<div style="font-size:18px; font-weight:700; color:#14162a !important; margin-bottom:2px;">STEM · 7 клас · Урок 3</div>'
+      + '<div style="font-size:13px; color:#565f82 !important; margin-bottom:16px;">«Я в STEMі — ми в темі» — домашнє опрацювання</div>'
+      + '<table style="width:100%; border-collapse:collapse; margin-bottom:18px;">'
+      + '<tr><td style="padding:4px 0; font-size:12px; color:#565f82 !important; width:130px;">Ім\'я та прізвище</td><td style="padding:4px 0; font-size:13px; color:#14162a !important; font-weight:700;">' + (name || '—') + '</td></tr>'
+      + '<tr><td style="padding:4px 0; font-size:12px; color:#565f82 !important;">Клас</td><td style="padding:4px 0; font-size:13px; color:#14162a !important; font-weight:700;">' + (cls || '—') + '</td></tr>'
+      + '<tr><td style="padding:4px 0; font-size:12px; color:#565f82 !important;">Дата</td><td style="padding:4px 0; font-size:13px; color:#14162a !important;">' + dateStr + '</td></tr>'
+      + '</table>'
+
+      + '<div style="font-size:14px; font-weight:700; color:#7c3aed !important; margin:14px 0 8px; border-top:1px solid #dde1f2 !important; padding-top:14px;">Крок 2 · Моя анкета</div>'
+      + '<div style="font-size:12px; color:#14162a !important; line-height:1.6;">'
+      + '1. STEM-галузь: <b>' + (q1o ? escapeHtml(q1o.full) : 'не обрано') + '</b><br>'
+      + '2. Години за технікою: <b>' + (q2o ? escapeHtml(q2o.full) : 'не обрано') + '</b><br>'
+      + '3. Тип діяльності: <b>' + (q3o ? escapeHtml(q3o.full) : 'не обрано') + '</b>'
+      + '</div>'
+
+      + '<div style="font-size:14px; font-weight:700; color:#7c3aed !important; margin:16px 0 8px; border-top:1px solid #dde1f2 !important; padding-top:14px;">Крок 4 · Об\'єднані дані п\'яти груп</div>'
+      + aggTableHtml()
+
+      + '<div style="font-size:14px; font-weight:700; color:#7c3aed !important; margin:16px 0 8px; border-top:1px solid #dde1f2 !important; padding-top:14px;">Крок 5–6 · Діаграма і висновок</div>'
+      + '<div style="font-size:12px; color:#14162a !important; line-height:1.6;">Обране запитання для діаграми: <b>' + escapeHtml(QUESTIONS[document.getElementById('cbQuestion').value].title) + '</b>, масштаб: 1 клітинка = ' + escapeHtml(document.getElementById('cbScale').value) + ' учнів.<br>Висновок про кратність: ' + escapeHtml(ratioText.replace(/\s+/g,' ')) + '</div>'
+
+      + '<div style="font-size:14px; font-weight:700; color:#7c3aed !important; margin:16px 0 8px; border-top:1px solid #dde1f2 !important; padding-top:14px;">Крок 7 · Рефлексія</div>'
+      + '<div style="font-size:12px; color:#14162a !important; line-height:1.6;">Найскладніший етап: <b>' + escapeHtml(reflectChoice || 'не обрано') + '</b><br>Чи змінився б результат для іншої паралелі: ' + escapeHtml(reflectTextEl.value.trim() || '—') + '</div>'
+
+      + '<div style="font-size:14px; font-weight:700; color:#7c3aed !important; margin:16px 0 8px; border-top:1px solid #dde1f2 !important; padding-top:14px;">Крок 8 · Домашнє завдання</div>'
+      + '<div style="font-size:12px; color:#14162a !important; line-height:1.6; white-space:pre-wrap;">' + (escapeHtml(hwEl.value.trim()) || '(відповідь не заповнена)') + '</div>'
+      + '</div>';
+    return html;
+  }
+
+  function sanitizeFilename(s){
+    return String(s).trim().replace(/['"]/g,'').replace(/\s+/g,'_').replace(/[^\wа-яА-ЯіІїЇєЄ\-_]/gu, '') || 'учень';
+  }
+
+  function saveBlobWithFallback(blob, filename){
+    var didFallback = false;
+    function tryAnchorFallback(){
+      try{
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url; a.download = filename;
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+        setStatus('ok', 'PDF збережено як «' + filename + '». Тепер прикріпи його до завдання в Google Classroom.');
+      }catch(err){
+        setStatus('err', 'Не вдалося зберегти файл автоматично. Спробуй ще раз або зроби скриншот сторінки. (' + (err && err.message ? err.message : 'помилка') + ')');
+      }
+    }
+    try{
+      if(window.claude && typeof window.claude.use === 'function'){
+        window.claude.use('downloads').then(function(caps){
+          if(caps && caps.downloads){
+            blob.arrayBuffer().then(function(buf){
+              return caps.downloads.download(filename, new Uint8Array(buf));
+            }).then(function(){
+              setStatus('ok', 'PDF збережено як «' + filename + '». Тепер прикріпи його до завдання в Google Classroom.');
+            }).catch(function(){ if(!didFallback){ didFallback = true; tryAnchorFallback(); } });
+          } else { didFallback = true; tryAnchorFallback(); }
+        }).catch(function(){ didFallback = true; tryAnchorFallback(); });
+      } else {
+        tryAnchorFallback();
+      }
+    }catch(e){
+      if(!didFallback) tryAnchorFallback();
+    }
+  }
+
+  document.getElementById('savePdfBtn').addEventListener('click', function(){
+    var warning = document.getElementById('hwWarning');
+    if(!nameEl.value.trim() || !classEl.value.trim()){
+      warning.classList.add('show');
+      (nameEl.value.trim() ? classEl : nameEl).focus();
+      return;
+    }
+    warning.classList.remove('show');
+    if(typeof html2canvas === 'undefined' || typeof window.jspdf === 'undefined'){
+      setStatus('err', 'Бібліотеки для створення PDF не завантажилися. Перевір інтернет-з\'єднання і спробуй ще раз.');
+      return;
+    }
+    setStatus('working', 'Готуємо PDF…');
+
+    var tpl = document.getElementById('pdfTemplate');
+    tpl.innerHTML = buildPdfTemplateHtml();
+
+    html2canvas(tpl, {
+      backgroundColor: '#ffffff',
+      scale: 2,
+      useCORS: true,
+      onclone: function(clonedDoc){
+        var el = clonedDoc.getElementById('pdfTemplate');
+        if(el){
+          el.style.left = '0px';
+          el.style.position = 'static';
+          el.querySelectorAll('*').forEach(function(node){
+            var cs = clonedDoc.defaultView.getComputedStyle(node);
+            if(cs && cs.color){ node.style.setProperty('color', cs.color, 'important'); }
+          });
+        }
+      }
+    }).then(function(canvas){
+      try{
+        var jsPDF = window.jspdf.jsPDF;
+        var pdf = new jsPDF('p', 'pt', 'a4');
+        var pageW = pdf.internal.pageSize.getWidth();
+        var pageH = pdf.internal.pageSize.getHeight();
+        var imgW = pageW;
+        var imgH = (canvas.height * imgW) / canvas.width;
+        var imgData = canvas.toDataURL('image/png');
+
+        if(imgH <= pageH){
+          pdf.addImage(imgData, 'PNG', 0, 0, imgW, imgH);
+        } else {
+          var remainingHeightPx = canvas.height;
+          var pageHeightPx = Math.floor((pageH * canvas.width) / imgW);
+          var sourceY = 0;
+          var pageCanvas = document.createElement('canvas');
+          pageCanvas.width = canvas.width;
+          var first = true;
+          while(remainingHeightPx > 0){
+            var sliceHeightPx = Math.min(pageHeightPx, remainingHeightPx);
+            pageCanvas.height = sliceHeightPx;
+            var ctx = pageCanvas.getContext('2d');
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0,0,pageCanvas.width, sliceHeightPx);
+            ctx.drawImage(canvas, 0, sourceY, canvas.width, sliceHeightPx, 0, 0, canvas.width, sliceHeightPx);
+            var sliceImg = pageCanvas.toDataURL('image/png');
+            var sliceImgH = (sliceHeightPx * imgW) / canvas.width;
+            if(!first) pdf.addPage();
+            pdf.addImage(sliceImg, 'PNG', 0, 0, imgW, sliceImgH);
+            first = false;
+            sourceY += sliceHeightPx;
+            remainingHeightPx -= sliceHeightPx;
+          }
+        }
+
+        var filename = 'STEM7_Урок3_' + sanitizeFilename(nameEl.value) + '_' + sanitizeFilename(classEl.value) + '.pdf';
+        var blob = pdf.output('blob');
+        saveBlobWithFallback(blob, filename);
+      }catch(err){
+        setStatus('err', 'Помилка створення PDF: ' + (err && err.message ? err.message : 'невідома помилка') + '. Спробуй ще раз.');
+      }
+    }).catch(function(err){
+      setStatus('err', 'Не вдалося зробити знімок сторінки для PDF: ' + (err && err.message ? err.message : 'невідома помилка') + '.');
+    });
+  });
+
+  updateProgress();
+})();
+</script>
+</body>
+</html>
